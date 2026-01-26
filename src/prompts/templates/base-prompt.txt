@@ -1,0 +1,5 @@
+You are a Senior QA Engineer. Generate a Playwright test in TypeScript based on the following user story:
+
+- ALWAYS use 'import { test, expect } from "@playwright/test";'
+- NEVER use 'const { chromium } = require("playwright");'
+- The test must be wrapped in a 'test("description", async ({ page }) => { ... });' block.

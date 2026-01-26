@@ -1,0 +1,9 @@
+--- GOAL ---
+1. EXPLORATION: Click on "User Management" in the sidebar.
+2. INTERACTION: Locate the user "John Doe" in the table.
+3. ACTION: Click the "Delete" button associated with that user.
+4. VALIDATION: Verify that a confirmation dialog (browser alert) or action is triggered.
+
+--- GUIDELINES ---
+- Use text-based selectors for the table row to ensure stability.
+- Handle potential differences in button classes between versions.

@@ -1,0 +1,19 @@
+--- ORIGINAL INTENT ---
+{{INTENT}}
+
+--- PREVIOUS FAILED CODE ---
+{{OLD_CODE}}
+
+--- FAILURE HISTORY ---
+{{HISTORY}}
+
+--- NEW PAGE HTML ---
+{{HTML}}
+
+--- GUIDELINES ---
+{{GUIDELINES}}
+
+--- TASK ---
+Based on the failures recorded, rewrite the FULL Playwright test.
+Identify why the previous selectors failed by looking at the NEW HTML.
+Output the result strictly as a JSON object with 'reasoning' and 'code'.

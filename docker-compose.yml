@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # --- System Under Test (SUT) ---
+  sut-app:
+      build: .
+      container_name: sut-app
+      ports:
+        - "3000:3000"
+      environment:
+        - APP_VERSION=${APP_VERSION:-v1}
+        - APP_PORT=3000
+      command: npx ts-node src/app/server.ts
+      networks:
+        - qa-ops-network
+
+  # --- AI Testing Agent ---
+  ai-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-agent
+    ports:
+      - "9323:9323"
+    depends_on:
+      - sut-app
+    environment:
+      - LLM_PROVIDER=${LLM_PROVIDER}
+      - LLM_MODEL=${LLM_MODEL}
+      - LLM_API_KEY=${LLM_API_KEY}
+      - LLM_TEMPERATURE=${LLM_TEMPERATURE:-0.1}
+      - APP_URL=http://sut-app:${APP_PORT:-3000}
+      - TESTS_PATH=${TESTS_PATH}
+    volumes:
+      - .:/app
+      - ./agent-logs:/app/agent-logs
+      - ./test-results:/app/test-results
+    stdin_open: true
+    tty: true 
+    networks:
+      - qa-ops-network
+
+networks:
+  qa-ops-network:
+    driver: bridge

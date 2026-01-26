@@ -1,0 +1,13 @@
+{{BASE_PROMPT}}
+
+--- GOAL ---
+{{INTENT}}
+
+--- GUIDELINES ---
+{{GUIDELINES}}
+
+--- CURRENT PAGE HTML ---
+{{HTML}}
+
+--- OUTPUT ---
+Provide your response as a JSON object following the structure defined in the Guidelines.

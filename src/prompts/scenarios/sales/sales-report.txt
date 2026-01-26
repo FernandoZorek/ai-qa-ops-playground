@@ -1,0 +1,7 @@
+--- GOAL ---
+1. EXPLORATION: Look at the navigation menu and find the link for "Sales Reports". Click it to navigate.
+2. INTERACTION: On the reports page, wait for the data to load and click the "Download JSON Data" button.
+3. DATA VALIDATION: 
+   - Capture the JSON data displayed in the output area.
+   - Verify that the response status indicates "success".
+   - Ensure a field representing the currency value (like "total" or "amount") is present and is a valid number.

@@ -1,0 +1,16 @@
+--- GUIDELINES ---
+- Do not hardcode IDs unless absolutely necessary; prefer user-facing attributes like text, roles, or placeholders.
+- Handle the asynchronous nature of the page (loading states).
+- Use 'process.env.APP_URL' as the starting point.
+
+--- CRITICAL INSTRUCTION ---
+Your response must be a valid JSON object. Do not include markdown blocks (like ```json).
+Structure:
+{
+  "reasoning": "A brief explanation of why you chose these selectors and how you are handling delays.",
+  "code": "The complete Playwright TypeScript code."
+}
+
+--- CRITICAL: DIALOG HANDLING ---
+When a button has an onclick="alert(...)" attribute, await page.waitForEvent('dialog') combined with await button.click() will ALWAYS TIMEOUT.
+INSTRUCTION: Use page.once('dialog', ...) BEFORE the await button.click(). Do not use waitForEvent for native blocking alerts.

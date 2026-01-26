@@ -1,0 +1,6 @@
+--- GOAL ---
+1. EXPLORATION: Navigate to "Profile Settings" via the sidebar.
+2. INTERACTION: Change the "Display Name" input to "AI Tester Pro".
+3. ACTION: Click the "Save Changes" button.
+4. ASYNC WAIT: Wait for the button to finish the "Saving..." state.
+5. VALIDATION: Verify that the success message "Profile updated successfully!" becomes visible.

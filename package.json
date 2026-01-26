@@ -1,0 +1,43 @@
+{
+  "name": "ai-qa-ops-playground",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "directories": {
+    "test": "tests"
+  },
+  "description": "AI-Driven Autonomous QA Ops Playground",
+  "scripts": {
+    "start:app:v1": "export APP_VERSION=v1 && ts-node-dev src/app/server.ts",
+    "start:app:v2": "export APP_VERSION=v2 && ts-node-dev src/app/server.ts",
+    "agent:generate": "ts-node src/main.ts",
+    "agent:suite": "ts-node src/scripts/run-suite.ts",
+    "test:run": "npx playwright test",
+    "build": "tsc"
+  },
+  "keywords": [
+    "playwright",
+    "ai",
+    "qaops",
+    "self-healing",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "axios": "^1.13.3",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "openai": "^6.16.0",
+    "playwright": "^1.58.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "@types/express": "^5.0.6",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^25.0.10",
+    "prettier": "^3.8.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  }
+}
